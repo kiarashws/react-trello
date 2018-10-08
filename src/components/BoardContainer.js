@@ -79,7 +79,7 @@ class BoardContainer extends Component {
   }
 
   render() {
-    const {id, reducerData, draggable, laneDraggable, laneDragClass, style, ...otherProps} = this.props
+    const {id, reducerData, draggable, laneDraggable, contentClassName, laneDragClass, style, ...otherProps} = this.props
     // Stick to whitelisting attributes to segregate board and lane props
     const passthroughProps = pick(this.props, [
       'onLaneScroll',
@@ -90,6 +90,7 @@ class BoardContainer extends Component {
       'addCardLink',
       'laneSortFunction',
       'draggable',
+      'contentClassName',
       'cardDraggable',
       'collapsibleLanes',
       'editable',
@@ -106,7 +107,7 @@ class BoardContainer extends Component {
 
     return (
       <BoardDiv style={style} {...otherProps} draggable={false}>
-        <ScrollArea horizontal={true} contentClassName={otherProps.contentClassName}>
+        <ScrollArea horizontal={true} contentClassName={contentClassName}>
           <div style={{display: 'flex'}}>
             {reducerData.lanes.map((lane, index) => {
               const {id, droppable, ...otherProps} = lane

@@ -186,19 +186,20 @@ var BoardContainer = function (_Component) {
           reducerData = _props3.reducerData,
           draggable = _props3.draggable,
           laneDraggable = _props3.laneDraggable,
+          contentClassName = _props3.contentClassName,
           laneDragClass = _props3.laneDragClass,
           style = _props3.style,
-          otherProps = (0, _objectWithoutProperties3.default)(_props3, ['id', 'reducerData', 'draggable', 'laneDraggable', 'laneDragClass', 'style']);
+          otherProps = (0, _objectWithoutProperties3.default)(_props3, ['id', 'reducerData', 'draggable', 'laneDraggable', 'contentClassName', 'laneDragClass', 'style']);
       // Stick to whitelisting attributes to segregate board and lane props
 
-      var passthroughProps = (0, _pick2.default)(this.props, ['onLaneScroll', 'onCardClick', 'onCardDelete', 'onCardAdd', 'onLaneClick', 'addCardLink', 'laneSortFunction', 'draggable', 'cardDraggable', 'collapsibleLanes', 'editable', 'hideCardDeleteIcon', 'customCardLayout', 'newCardTemplate', 'customLaneHeader', 'tagStyle', 'handleDragStart', 'handleDragEnd', 'cardDragClass', 'children']);
+      var passthroughProps = (0, _pick2.default)(this.props, ['onLaneScroll', 'onCardClick', 'onCardDelete', 'onCardAdd', 'onLaneClick', 'addCardLink', 'laneSortFunction', 'draggable', 'contentClassName', 'cardDraggable', 'collapsibleLanes', 'editable', 'hideCardDeleteIcon', 'customCardLayout', 'newCardTemplate', 'customLaneHeader', 'tagStyle', 'handleDragStart', 'handleDragEnd', 'cardDragClass', 'children']);
 
       return _react2.default.createElement(
         _Base.BoardDiv,
         (0, _extends3.default)({ style: style }, otherProps, { draggable: false }),
         _react2.default.createElement(
           _reactScrollbar2.default,
-          { horizontal: true, contentClassName: otherProps.contentClassName },
+          { horizontal: true, contentClassName: contentClassName },
           _react2.default.createElement(
             'div',
             { style: { display: 'flex' } },
