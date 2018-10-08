@@ -164,6 +164,7 @@ BoardContainer.propTypes = {
   laneDraggable: PropTypes.bool,
   cardDraggable: PropTypes.bool,
   cardDragClass: PropTypes.string,
+  contentClassName: PropTypes.string,
   laneDragClass: PropTypes.string
 }
 

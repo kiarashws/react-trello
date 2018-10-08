@@ -262,6 +262,7 @@ BoardContainer.propTypes = {
   laneDraggable: _propTypes2.default.bool,
   cardDraggable: _propTypes2.default.bool,
   cardDragClass: _propTypes2.default.string,
+  contentClassName: _propTypes2.default.string,
   laneDragClass: _propTypes2.default.string
 };
 
