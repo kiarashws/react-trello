@@ -197,39 +197,34 @@ var BoardContainer = function (_Component) {
         _Base.BoardDiv,
         (0, _extends3.default)({ style: style }, otherProps, { draggable: false }),
         _react2.default.createElement(
-          _Container2.default,
-          {
-            orientation: 'horizontal',
-            onDragStart: this.onDragStart,
-            dragClass: laneDragClass,
-            onDrop: this.onLaneDrop,
-            lockAxis: 'x',
-            getChildPayload: function getChildPayload(index) {
-              return _this2.getLaneDetails(index);
-            },
-            groupName: 'TrelloBoard' + id },
-          reducerData.lanes.map(function (lane, index) {
-            var id = lane.id,
-                droppable = lane.droppable,
-                otherProps = (0, _objectWithoutProperties3.default)(lane, ['id', 'droppable']);
+          _reactScrollbar2.default,
+          { horizontal: true, contentClassName: otherProps.contentClassName },
+          _react2.default.createElement(
+            'div',
+            { style: { display: 'flex' } },
+            reducerData.lanes.map(function (lane, index) {
+              var id = lane.id,
+                  droppable = lane.droppable,
+                  otherProps = (0, _objectWithoutProperties3.default)(lane, ['id', 'droppable']);
 
-            var laneToRender = _react2.default.createElement(_Lane2.default, (0, _extends3.default)({
-              key: id,
-              id: id,
-              getCardDetails: _this2.getCardDetails,
-              index: index,
-              droppable: droppable === undefined ? true : droppable
-            }, otherProps, passthroughProps));
-            return draggable && laneDraggable ? _react2.default.createElement(
-              _Draggable2.default,
-              { key: lane.id },
-              laneToRender
-            ) : _react2.default.createElement(
-              'span',
-              { key: lane.id },
-              laneToRender
-            );
-          })
+              var laneToRender = _react2.default.createElement(_Lane2.default, (0, _extends3.default)({
+                key: id,
+                id: id,
+                getCardDetails: _this2.getCardDetails,
+                index: index,
+                droppable: droppable === undefined ? true : droppable
+              }, otherProps, passthroughProps));
+              return draggable && laneDraggable ? _react2.default.createElement(
+                _Draggable2.default,
+                { key: lane.id },
+                laneToRender
+              ) : _react2.default.createElement(
+                'span',
+                { key: lane.id },
+                laneToRender
+              );
+            })
+          )
         )
       );
     }

@@ -11,11 +11,11 @@ injectGlobal`
     color: inherit;
     cursor: text;
   }
-  
+
   .react_trello_dragClass {
     transform: rotate(3deg);
   }
-  
+
   .react_trello_dragLaneClass {
     transform: rotate(3deg);
   }

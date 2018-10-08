@@ -106,26 +106,20 @@ class BoardContainer extends Component {
 
     return (
       <BoardDiv style={style} {...otherProps} draggable={false}>
-        <Container
-          orientation="horizontal"
-          onDragStart={this.onDragStart}
-          dragClass={laneDragClass}
-          onDrop={this.onLaneDrop}
-          lockAxis={'x'}
-          getChildPayload={index => this.getLaneDetails(index)}
-          groupName={`TrelloBoard${id}`}>
+        <ScrollArea horizontal={true} contentClassName={otherProps.contentClassName}>
+          <div style={{display: 'flex'}}>
             {reducerData.lanes.map((lane, index) => {
               const {id, droppable, ...otherProps} = lane
               const laneToRender = (
-                <Lane
-                  key={id}
-                  id={id}
-                  getCardDetails={this.getCardDetails}
-                  index={index}
-                  droppable={droppable === undefined ? true : droppable}
-                  {...otherProps}
-                  {...passthroughProps}
-                />
+                  <Lane
+                    key={id}
+                    id={id}
+                    getCardDetails={this.getCardDetails}
+                    index={index}
+                    droppable={droppable === undefined ? true : droppable}
+                    {...otherProps}
+                    {...passthroughProps}
+                  />
               )
               return draggable && laneDraggable ? (
                 <Draggable key={lane.id}>{laneToRender}</Draggable>
@@ -133,7 +127,8 @@ class BoardContainer extends Component {
                 <span key={lane.id}>{laneToRender}</span>
               )
             })}
-        </Container>
+          </div>
+          </ScrollArea>
       </BoardDiv>
     )
   }
