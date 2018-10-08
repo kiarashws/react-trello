@@ -10,6 +10,7 @@ import Container from '../dnd/Container'
 import Draggable from '../dnd/Draggable'
 import * as boardActions from '../actions/BoardActions'
 import * as laneActions from '../actions/LaneActions'
+import ScrollArea from 'react-scrollbar'
 
 class BoardContainer extends Component {
   wireEventBus = () => {
@@ -113,25 +114,25 @@ class BoardContainer extends Component {
           lockAxis={'x'}
           getChildPayload={index => this.getLaneDetails(index)}
           groupName={`TrelloBoard${id}`}>
-          {reducerData.lanes.map((lane, index) => {
-            const {id, droppable, ...otherProps} = lane
-            const laneToRender = (
-              <Lane
-                key={id}
-                id={id}
-                getCardDetails={this.getCardDetails}
-                index={index}
-                droppable={droppable === undefined ? true : droppable}
-                {...otherProps}
-                {...passthroughProps}
-              />
-            )
-            return draggable && laneDraggable ? (
-              <Draggable key={lane.id}>{laneToRender}</Draggable>
-            ) : (
-              <span key={lane.id}>{laneToRender}</span>
-            )
-          })}
+            {reducerData.lanes.map((lane, index) => {
+              const {id, droppable, ...otherProps} = lane
+              const laneToRender = (
+                <Lane
+                  key={id}
+                  id={id}
+                  getCardDetails={this.getCardDetails}
+                  index={index}
+                  droppable={droppable === undefined ? true : droppable}
+                  {...otherProps}
+                  {...passthroughProps}
+                />
+              )
+              return draggable && laneDraggable ? (
+                <Draggable key={lane.id}>{laneToRender}</Draggable>
+              ) : (
+                <span key={lane.id}>{laneToRender}</span>
+              )
+            })}
         </Container>
       </BoardDiv>
     )
