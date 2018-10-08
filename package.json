@@ -4,7 +4,6 @@
   "main": "dist/index.js",
   "jsnext:main": "components/index.js",
   "module": "components/index.js",
-  "version": "1.0.0",
   "files": [
     "src",
     "dist",
