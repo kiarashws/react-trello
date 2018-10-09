@@ -8,6 +8,10 @@ var _assign = require('babel-runtime/core-js/object/assign');
 
 var _assign2 = _interopRequireDefault(_assign);
 
+var _extends2 = require('babel-runtime/helpers/extends');
+
+var _extends3 = _interopRequireDefault(_extends2);
+
 var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
 
 var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
@@ -102,7 +106,7 @@ var Container = function (_Component) {
 			} else {
 				return _react2.default.createElement(
 					'div',
-					{ style: this.props.style, ref: this.setRef },
+					{ style: (0, _extends3.default)({}, this.props.style, { minHeight: '200px' }), ref: this.setRef },
 					this.props.children
 				);
 			}
