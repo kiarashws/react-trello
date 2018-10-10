@@ -106,7 +106,7 @@ var Container = function (_Component) {
 			} else {
 				return _react2.default.createElement(
 					'div',
-					{ style: (0, _extends3.default)({}, this.props.style, { minHeight: '200px' }), ref: this.setRef },
+					{ style: (0, _extends3.default)({}, this.props.style, { minHeight: '70vh' }), ref: this.setRef },
 					this.props.children
 				);
 			}

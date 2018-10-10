@@ -44,6 +44,7 @@ storiesOf('Drag-n-Drop', module)
       return (
         <Board
           data={data}
+          height="200px"
           draggable
           onDataChange={shouldReceiveNewData}
           handleDragStart={handleDragStart}
@@ -59,6 +60,7 @@ storiesOf('Drag-n-Drop', module)
     withInfo('Modifying appearance of dragged card')(() => {
       return <Board
         data={data}
+        height="200px"
         cardDragClass='draggingCard'
         laneDragClass='draggingLane'
         draggable

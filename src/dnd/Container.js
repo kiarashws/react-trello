@@ -43,7 +43,7 @@ class Container extends Component {
 			return this.props.render(this.setRef);
 		} else {
 			return (
-				<div style={{...this.props.style, minHeight: '200px'}} ref={this.setRef}>
+				<div style={{...this.props.style, minHeight: '70vh'}} ref={this.setRef}>
 					{this.props.children}
 				</div>
 			);
