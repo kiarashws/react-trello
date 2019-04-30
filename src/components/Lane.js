@@ -6,7 +6,7 @@ import isEqual from 'lodash/isEqual'
 import Container from '../dnd/Container'
 import Draggable from '../dnd/Draggable'
 import uuidv1 from 'uuid/v1'
-import ScrollArea from 'react-scrollbar'
+import PerfectScrollbar from 'react-perfect-scrollbar'
 
 import Loader from './Loader'
 import Card from './Card'
@@ -175,11 +175,11 @@ class Lane extends Component {
     })
 
     return (<ScrollableLane innerRef={this.laneDidMount} isDraggingOver={isDraggingOver}>
-      <ScrollArea style={{height: height}}>
+      <PerfectScrollbar style={{height: height}}>
         <Container orientation="vertical" groupName="TrelloLane" dragClass={cardDragClass} onDragStart={this.onDragStart} onDrop={e => this.onDragEnd(id, e)} onDragEnter={() => this.setState({isDraggingOver: true})} onDragLeave={() => this.setState({isDraggingOver: false})} shouldAcceptDrop={this.shouldAcceptDrop} getChildPayload={index => this.props.getCardDetails(id, index)}>
           {cardList}
         </Container>
-      </ScrollArea>
+      </PerfectScrollbar>
       {editable && !addCardMode && this.renderAddCardLink()}
       {addCardMode && this.renderNewCard()}
     </ScrollableLane>)

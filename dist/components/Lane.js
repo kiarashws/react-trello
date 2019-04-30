@@ -60,9 +60,9 @@ var _v = require('uuid/v1');
 
 var _v2 = _interopRequireDefault(_v);
 
-var _reactScrollbar = require('react-scrollbar');
+var _reactPerfectScrollbar = require('react-perfect-scrollbar');
 
-var _reactScrollbar2 = _interopRequireDefault(_reactScrollbar);
+var _reactPerfectScrollbar2 = _interopRequireDefault(_reactPerfectScrollbar);
 
 var _Loader = require('./Loader');
 
@@ -243,7 +243,7 @@ var Lane = function (_Component) {
         _Base.ScrollableLane,
         { innerRef: _this.laneDidMount, isDraggingOver: isDraggingOver },
         _react2.default.createElement(
-          _reactScrollbar2.default,
+          _reactPerfectScrollbar2.default,
           { style: { height: height } },
           _react2.default.createElement(
             _Container2.default,
